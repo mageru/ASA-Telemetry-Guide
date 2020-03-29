@@ -118,7 +118,7 @@ KexAlgorithms diffie-hellman-group1-sha1
 Ciphers 3des-cbc
 ```
 
-Another potential issue is that the `testbed-asa.yaml` file in the director `telegraf/scripts` directory is not accurate for your device, ensure credentials, IP, and device names all match in the topology and your environment.
+Another likely issue is that the `testbed-asa.yaml` file in the director `telegraf/scripts` directory is not accurate for your device, ensure credentials, IP, and device names all match in the topology and your environment. This file is a pyATS topology file which is essential for pyATS to work. For more information on pyATS topology files see the following [link](https://developer.cisco.com/docs/pyats/#!connection-to-devices)
 
 ## Step 3 - Configure Telegraf and Build Dashboards
 
