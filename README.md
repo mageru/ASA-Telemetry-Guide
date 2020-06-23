@@ -1,6 +1,8 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/sttrayno/ASA-Telemetry-Guide)
+
 # ASA VPN Health Monitoring
 
-### Example VPN health monitoring dashboard on Grafana for ASA devices [BETA]
+### Example VPN health monitoring dashboard on Grafana for ASA devices 
 
 With recent events, home working and VPN access have became a priority for many IT organisations, the often forgotten about ASA has became a mission critical part of our IT infrastructure. The challenge however is how do we monitor these devices on an ongoing basis to look for trends in usage, peaks and spot any potential issues with dashboards like below.
 
