@@ -2,36 +2,36 @@ testbed:
   name: pyats
 
   tacacs:
-    username: ansibleSVC
+    username: switchSSHUserSVC
   passwords:
     tacacs: 'PASSWORD REDACTED'
     enable: 'PASSWORD REDACTED'
     line: 'PASSWORD REDACTED'
 
 devices:
-  DCEFW1-A:
-    alias: DCEFW1-A
+  MYSWITCHNAME-A:
+    alias: MYSWITCHNAME-A
     os: asa
     type: ''
     connections:
       defaults:
         class: unicon.Unicon
       console:
-        ip: "172.18.143.2"
+        ip: "172.16.122.2"
         protocol: ssh
     custom:
       abstraction:
         order: [os, type]
 
-  DCWFW1-A:
-    alias: DCWFW1-A
+  MYSWITCHNAME-B:
+    alias: MYSWITCHNAME-B
     os: asa
     type: ''
     connections:
       defaults:
         class: unicon.Unicon
       console:
-        ip: "172.16.243.2"
+        ip: "172.4.222.2"
         protocol: ssh
     custom:
       abstraction:
