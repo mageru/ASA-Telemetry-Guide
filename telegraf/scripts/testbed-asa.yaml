@@ -2,22 +2,36 @@ testbed:
   name: pyats
 
   tacacs:
-    username: admin
+    username: ansibleSVC
   passwords:
-    tacacs: C1sco12345
-    enable: C1sco12345
-    line: C1sco12345
+    tacacs: 'PASSWORD REDACTED'
+    enable: 'PASSWORD REDACTED'
+    line: 'PASSWORD REDACTED'
 
 devices:
-  ASAv:
-    alias: ASAv
+  DCEFW1-A:
+    alias: DCEFW1-A
     os: asa
-    type: ASAv
+    type: ''
     connections:
       defaults:
         class: unicon.Unicon
       console:
-        ip: "198.18.133.254"
+        ip: "172.18.143.2"
+        protocol: ssh
+    custom:
+      abstraction:
+        order: [os, type]
+
+  DCWFW1-A:
+    alias: DCWFW1-A
+    os: asa
+    type: ''
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        ip: "172.16.243.2"
         protocol: ssh
     custom:
       abstraction:

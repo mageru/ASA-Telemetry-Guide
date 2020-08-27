@@ -15,12 +15,42 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
+  "iteration": 1598541458380,
   "links": [],
   "panels": [
     {
       "cacheTimeout": null,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "Device Load (%)",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "red",
+                "index": 1,
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 6,
         "w": 8,
@@ -30,37 +60,18 @@
       "id": 2,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "max": 100,
-            "min": 0,
-            "title": "Device Load (%)",
-            "unit": "percent"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "red",
-              "index": 1,
-              "value": 90
-            }
-          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "auto",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.2.5",
+      "pluginVersion": "7.0.4",
       "targets": [
         {
           "groupBy": [
@@ -96,7 +107,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "timeFrom": null,
@@ -106,6 +123,36 @@
     },
     {
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "VPN Connections",
+          "mappings": [],
+          "max": 2700,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "red",
+                "value": 2500
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 6,
         "w": 8,
@@ -115,36 +162,18 @@
       "id": 10,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "max": 250,
-            "min": 0,
-            "title": "VPN Connections"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "red",
-              "index": 1,
-              "value": 220
-            }
-          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "auto",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.2.5",
+      "pluginVersion": "7.0.4",
       "targets": [
         {
           "groupBy": [],
@@ -163,7 +192,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "timeFrom": null,
@@ -174,6 +209,34 @@
     {
       "datasource": "InfluxDB-asa",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "Connections",
+          "mappings": [],
+          "max": 100000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "red",
+                "index": 1,
+                "value": 90000
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 6,
         "w": 7,
@@ -183,36 +246,18 @@
       "id": 12,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "max": 100000,
-            "min": 0,
-            "title": "Connections"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "red",
-              "index": 1,
-              "value": 90000
-            }
-          ],
+          "fields": "",
           "values": false
         },
-        "orientation": "auto",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.2.5",
+      "pluginVersion": "7.0.4",
       "targets": [
         {
           "groupBy": [],
@@ -231,7 +276,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "timeFrom": null,
@@ -248,13 +299,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 11,
         "w": 23,
         "x": 0,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 4,
       "legend": {
         "alignAsTable": true,
@@ -270,7 +329,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -286,6 +347,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "Current VPN Users",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -302,7 +364,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
           "groupBy": [],
@@ -374,13 +442,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 17
       },
+      "hiddenSeries": false,
       "id": 8,
       "legend": {
         "alignAsTable": true,
@@ -396,7 +472,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -407,6 +485,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "Active Sessions",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -423,9 +502,16 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
+          "alias": "Peak Concurrent Sessions",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -442,9 +528,16 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
+          "alias": "Inactive Sessions",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -461,7 +554,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -511,13 +610,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 11,
         "x": 12,
         "y": 17
       },
+      "hiddenSeries": false,
       "id": 14,
       "legend": {
         "avg": false,
@@ -532,7 +639,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -565,7 +674,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
           "groupBy": [],
@@ -584,7 +699,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
           "groupBy": [],
@@ -603,7 +724,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
           "groupBy": [],
@@ -622,7 +749,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -672,13 +805,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 24
       },
+      "hiddenSeries": false,
       "id": 6,
       "legend": {
         "alignAsTable": true,
@@ -695,7 +836,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -706,6 +849,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "Non-AnyConnect Active Users",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -722,9 +866,16 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
+          "alias": "Non-AnyConnect Peak Concurrent Users",
           "groupBy": [],
           "measurement": "exec_asa",
           "orderByTime": "ASC",
@@ -741,7 +892,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -791,13 +948,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-asa",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 11,
         "x": 12,
         "y": 24
       },
+      "hiddenSeries": false,
       "id": 16,
       "legend": {
         "avg": false,
@@ -812,7 +977,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -844,7 +1011,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         },
         {
           "groupBy": [],
@@ -863,7 +1036,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "switch_name",
+              "operator": "=~",
+              "value": "/^$cisco_switch$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -908,12 +1087,39 @@
       }
     }
   ],
-  "refresh": false,
-  "schemaVersion": 18,
+  "refresh": "1m",
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "DCWFW1-A",
+          "value": "DCWFW1-A"
+        },
+        "datasource": "InfluxDB-asa",
+        "definition": "SHOW TAG VALUES WITH KEY = \"switch_name\";",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Switch",
+        "multi": false,
+        "name": "cisco_switch",
+        "options": [],
+        "query": "SHOW TAG VALUES WITH KEY = \"switch_name\";",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
     "from": "now-15m",
@@ -921,7 +1127,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -947,5 +1152,5 @@
   "timezone": "",
   "title": "ASA Dashboard",
   "uid": "Qo8qDK9Wz",
-  "version": 5
+  "version": 16
 }
